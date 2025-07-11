@@ -1,0 +1,17 @@
+{
+  "name": "tutor-contrib-xconnect",
+  "version": "19.0.0",
+  "description": "XConnect plugin for Open edX MFEs",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "echo 'Build step - placeholder'",
+    "test": "echo 'Test step - placeholder'"
+  },
+  "keywords": ["openedx", "mfe", "plugin"],
+  "author": "Isanka Wijerathne",
+  "license": "Proprietary",
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0"
+  }
+}
