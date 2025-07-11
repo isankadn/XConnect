@@ -1,17 +1,23 @@
 {
   "name": "tutor-contrib-xconnect",
   "version": "19.0.0",
-  "description": "XConnect plugin for Open edX MFEs",
+  "description": "XConnect plugin for Open edX MFEs - Simple popup component",
   "main": "src/index.js",
+  "module": "src/index.js",
+  "files": [
+    "src/"
+  ],
   "scripts": {
     "build": "echo 'Build step - placeholder'",
     "test": "echo 'Test step - placeholder'"
   },
-  "keywords": ["openedx", "mfe", "plugin"],
+  "keywords": ["openedx", "mfe", "plugin", "popup"],
   "author": "Isanka Wijerathne",
   "license": "Proprietary",
   "peerDependencies": {
-    "react": "^17.0.0 || ^18.0.0",
-    "react-dom": "^17.0.0 || ^18.0.0"
-  }
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "dependencies": {},
+  "devDependencies": {}
 }

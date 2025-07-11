@@ -2,10 +2,20 @@
 import Popup from "./Popup";
 
 /**
- * Everything you expose to MFEs lives in this object.
- * The keys **must** match a slot identifier that the
- * target MFEs declare (HeaderEnd, FooterSlot, etc.).
+ * XConnect Plugin for Open edX MFEs
+ * This plugin provides a simple popup component that can be added to any MFE
  */
+
+// Export the slots object for MFE integration
 export const slots = {
   HeaderEnd: Popup,
+};
+
+// Export the component directly as well
+export { Popup };
+
+// Default export for the entire plugin
+export default {
+  slots,
+  Popup,
 };

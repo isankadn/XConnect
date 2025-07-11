@@ -1,43 +1,71 @@
 import React, { useState } from "react";
-import "./popup.css";             // or inline styles
 
-export default function Popup() {
+const Popup = () => {
   const [open, setOpen] = useState(false);
-  return (
-    <div style={{ position: "fixed", bottom: 24, right: 24, zIndex: 9_999 }}>
-      {open && (
-        <div
-          style={{
-            width: 280,
-            maxHeight: 380,
-            background: "#fff",
-            border: "1px solid #ccc",
-            borderRadius: 8,
-            boxShadow: "0 2px 8px rgba(0,0,0,.2)",
-            padding: 12,
-            overflow: "auto",
-          }}
-        >
-          <h4 style={{ marginTop: 0 }}>Hello Open edX!</h4>
-          <p>You can put anything here.</p>
-        </div>
-      )}
-      <button
-        style={{
-          width: 40,
-          height: 40,
-          borderRadius: "50%",
-          border: 0,
-          background: "#004f98",
-          color: "#fff",
-          fontSize: 22,
-          cursor: "pointer",
-        }}
-        onClick={() => setOpen(!open)}
-        aria-label="Toggle pop-up"
-      >
-        {open ? "–" : "+"}
-      </button>
-    </div>
+
+  const togglePopup = () => {
+    setOpen(!open);
+  };
+
+  const popupStyles = {
+    position: "fixed",
+    bottom: "24px",
+    right: "24px",
+    zIndex: 9999
+  };
+
+  const modalStyles = {
+    width: "280px",
+    maxHeight: "380px",
+    background: "#fff",
+    border: "1px solid #ccc",
+    borderRadius: "8px",
+    boxShadow: "0 2px 8px rgba(0,0,0,0.2)",
+    padding: "12px",
+    overflow: "auto",
+    marginBottom: "8px"
+  };
+
+  const buttonStyles = {
+    width: "40px",
+    height: "40px",
+    borderRadius: "50%",
+    border: "none",
+    background: "#004f98",
+    color: "#fff",
+    fontSize: "22px",
+    cursor: "pointer",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
+  };
+
+  const headerStyles = {
+    marginTop: "0px",
+    color: "#333",
+    fontSize: "16px"
+  };
+
+  return React.createElement(
+    "div",
+    { style: popupStyles },
+    open && React.createElement(
+      "div",
+      { style: modalStyles },
+      React.createElement("h4", { style: headerStyles }, "Hello Open edX!"),
+      React.createElement("p", null, "This is your XConnect popup! You can customize this content.")
+    ),
+    React.createElement(
+      "button",
+      {
+        style: buttonStyles,
+        onClick: togglePopup,
+        "aria-label": "Toggle popup",
+        type: "button"
+      },
+      open ? "×" : "+"
+    )
   );
-}
+};
+
+export default Popup;
